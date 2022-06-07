@@ -27,11 +27,11 @@ jobs:
       #run: D:/_JTest/parasoft_jtest_16.05/jtest/jtestcli.exe -config "builtin://Recommended Rules" -property report.format=xml,html,sarif -report "reports" -data demo.data.json
       #run: mvn clean jtest:jtest "-Djtest.config=builtin://Recommended Rules"
       
-    - name: Mvn cleaning
-      run: mvn -f demo-project/pom.xml clean
+    #- name: Mvn cleaning
+    #  run: mvn -f demo-project/pom.xml clean
             
-    - name: Mvn istallation without tests
-      run: mvn -f demo-project/pom.xml install jtest:jtest -DskipTests=true
+    #- name: Mvn istallation without tests
+    #  run: mvn -f demo-project/pom.xml install jtest:jtest -DskipTests=true
         
     - name: Run Jtest 
       uses: parasoft/run-jtest-action@1.0.0
