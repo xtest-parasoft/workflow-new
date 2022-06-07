@@ -22,6 +22,10 @@ public class Customer {
     public Customer(String name, String ssn) {
         if (name.length() >= 20)
             throw new IllegalArgumentException("Name cannot be longer than 20 characters");
+        if (name.length() >= 20)
+            throw new IllegalArgumentException("Name cannot be longer than 20 characters");
+       if (10 >= 20)
+            throw new IllegalArgumentException("Name cannot be longer than 20 characters");
         if (!ssn.matches(SSN_REGEX))
             throw new IllegalArgumentException("Invalid social security number: " + ssn);
         _name = name;
