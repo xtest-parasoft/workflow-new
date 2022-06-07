@@ -31,7 +31,7 @@ jobs:
       uses: parasoft/run-jtest-action@1.0.0
       with:
         #workingDir: demo-project
-        input: demo-project/jtest.data.json
+        input: demo-project/demo.data.json
         testConfig: builtin://Recommended Rules
         additionalParams: -fail -property techsupport.create.on.exit=false
         #Uses the jtest.data.json generated with the Maven command in the previous step
