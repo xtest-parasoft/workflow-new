@@ -28,10 +28,10 @@ jobs:
       #run: mvn clean jtest:jtest "-Djtest.config=builtin://Recommended Rules"
       
     - name: Mvn cleaning
-      run: mvn -f parent\pom.xml clean
+      run: mvn -f demo-project/pom.xml clean
             
     - name: Mvn istallation without tests
-      run: mvn -f parent\pom.xml install jtest:jtest -DskipTests=true
+      run: mvn -f demo-project/pom.xml install jtest:jtest -DskipTests=true
         
     - name: Run Jtest 
       uses: parasoft/run-jtest-action@1.0.0
