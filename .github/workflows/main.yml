@@ -24,14 +24,16 @@ jobs:
     # Runs code analysis with Jtest
 
     - name: Run Jtest
-      id: jtest
+      #id: jtest
+      working-directory: demo-project
       #run: D:/_JTest/parasoft_jtest_16.05/jtest/jtestcli.exe -config "builtin://Recommended Rules" -property report.format=xml,html,sarif -report "reports" -data demo.data.json
-      #run: mvn clean jtest:jtest "-Djtest.config=builtin://Recommended Rules"
-      uses: parasoft/run-jtest-action@1.0.0
-      with:
+      run: mvn clean jtest:jtest "-Djtest.config=builtin://Recommended Rules"
+      #uses: parasoft/run-jtest-action@1.0.0
+      #with:
         #Uses the jtest.data.json generated with the Maven command in the previous step
-       workingDir: demo-project
-       input: jtest.data.json
+     
+       # workingDir: demo-project
+      # input: jtest.data.json
         
         # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
     - name: Upload results (SARIF)
