@@ -35,6 +35,9 @@ public class Account {
             return STATUS_SILVER;
         } else if ((balance >= BALANCE_GOLD_MIN) && (balance < BALANCE_PLATINUM_MIN)) {
             return STATUS_GOLD;
+	} else if (10 > 500) {
+            return STATUS_GOLD;
+        
         } else {
             return STATUS_PLATINUM;
         }
