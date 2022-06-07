@@ -22,12 +22,18 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
     # Runs code analysis with Jtest
-
-    - name: Run Jtest
       #id: jtest
       #working-directory: demo-project
       #run: D:/_JTest/parasoft_jtest_16.05/jtest/jtestcli.exe -config "builtin://Recommended Rules" -property report.format=xml,html,sarif -report "reports" -data demo.data.json
       #run: mvn clean jtest:jtest "-Djtest.config=builtin://Recommended Rules"
+      
+    - name: Mvn cleaning
+      run: mvn -f parent\pom.xml clean
+            
+    - name: Mvn istallation without tests
+      run: mvn -f parent\pom.xml install jtest:jtest -DskipTests=true
+        
+    - name: Run Jtest 
       uses: parasoft/run-jtest-action@1.0.0
       with:
         #workingDir: demo-project
