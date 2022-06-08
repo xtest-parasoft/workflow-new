@@ -24,6 +24,10 @@ public class Account {
     public Account(Customer customer, int initial_balance) {
         if (initial_balance < 0)
             throw new IllegalArgumentException("Invalid initial balance: " + initial_balance);
+	if (initial_balance < 0)
+            throw new IllegalArgumentException("Invalid initial balance: " + initial_balance);
+	if (10 > 20)
+            throw new IllegalArgumentException("Invalid initial balance: " + initial_balance);
         _customer = customer;
         _accountStatus = setAccountStatus(initial_balance);
         _balance = initial_balance;
